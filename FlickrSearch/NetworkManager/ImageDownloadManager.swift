@@ -14,8 +14,6 @@ class ImageDownloadManager: NSObject {
     
     static let shared = ImageDownloadManager()
     
-    private(set) var cache: NSCache<AnyObject, AnyObject> = NSCache()
-    
     private var operationQueue = OperationQueue()
     private var dictionaryBlocks = [UIImageView: (String, ImageClosure, ImageDownloadOperation)]()
     
