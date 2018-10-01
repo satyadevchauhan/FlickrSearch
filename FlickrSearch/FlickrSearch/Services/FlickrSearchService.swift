@@ -10,6 +10,12 @@ import UIKit
 
 class FlickrSearchService: NSObject {
     
+    /// Flickr API Call using the "flickr.photos.search" method, to retrieve photos based on search text from a given page
+    ///
+    /// - Parameters:
+    ///   - text: search term
+    ///   - page: which page
+    ///   - completion: completion handler to retrieve result
     func request(_ searchText: String, pageNo: Int, completion: @escaping (Result<Photos?>) -> Void) {
         
         guard let request = FlickrRequestConfig.searchRequest(searchText, pageNo).value else {
